@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timsort Pro Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <div class="visualizer-section">
+            <h1>Timsort Pro Visualizer</h1>
+            <div id="array-container" class="array-container"></div>
+            
+            <div class="controls-panel">
+                <div class="control-group">
+                    <button id="startBtn" onclick="startTimsort()">Mulai Otomatis</button>
+                    <button id="nextBtn" onclick="triggerNext()" disabled>Langkah Berikutnya (Manual)</button>
+                    <button onclick="resetArray()">Reset</button>
+                </div>
+                
+                <div class="control-group settings">
+                    <label>Kecepatan: </label>
+                    <input type="range" id="speedRange" min="10" max="1000" value="500" dir="rtl">
+                    <span id="speedVal">500ms</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Mode Manual:</label>
+                    <input type="checkbox" id="manualMode" onchange="toggleManualMode()">
+                </div>
+            </div>
+            <div id="status" class="status">Siap dimulai...</div>
+        </div>
+        
+        <div class="history-section">
+            <h3>Log Aktivitas</h3>
+            <div id="history-log" class="history-log"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
